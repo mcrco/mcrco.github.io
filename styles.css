@@ -1,0 +1,265 @@
+/* General Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+section {
+  padding: 80px 40px;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+/* Make all main sections (except intro) have consistent height */
+#experiences, #projects, #coursework, #skills, #awards {
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 40px;
+}
+
+/* Keep intro section special */
+#intro {
+  text-align: center;
+  padding: 120px 40px 60px;
+  min-height: auto;
+}
+
+/* Scroll Bar */
+.scroll-bar {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 50vh;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.scroll-dot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.scroll-dot::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #333;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: all 0.3s;
+}
+
+.scroll-dot:hover {
+  opacity: 1;
+}
+
+.scroll-dot.active {
+  opacity: 1;
+}
+
+.scroll-dot.active::before {
+  width: 8px;
+  height: 24px;
+  border-radius: 4px;
+}
+
+/* Intro Section */
+#intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+#intro p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+#intro .intro-text {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.8;
+  /* text-align: left; */
+}
+
+.contact-icons {
+  margin-top: 20px;
+}
+
+.contact-icons a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.contact-icons a:hover {
+  color: #007bff;
+}
+
+/* Experience and Project Cards */
+.experience-card, .project-card {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experience-card h3, .award-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.experience-card p, .project-card p, .award-card p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.experience-card ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.project-card {
+  position: relative;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.project-header h3 {
+  margin: 0;
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+}
+
+.project-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.project-links a:hover {
+  color: #007bff;
+}
+
+.skills {
+  margin-top: 10px;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  display: inline-block;
+  background-color: #f0f0f0;
+  padding: 6px 12px;
+  border-radius: 15px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill-tag.highlighted {
+  background-color: #007bff;
+  color: white;
+}
+
+.skill-tag.highlighted:hover {
+  background-color: #0056b3;
+}
+
+/* Coursework, Skills, and Awards Sections */
+.coursework-grid, .skills-grid, .awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.course-category, .skill-category, .award-card {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.course-category:hover, .skill-category:hover, .award-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-category h3, .skill-category h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.course-list, .skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.course-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.course-list li:last-child {
+  border-bottom: none;
+}
+
+.course-list li, .skill-list li {
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
