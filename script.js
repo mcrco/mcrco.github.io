@@ -2,61 +2,136 @@
 const sections = document.querySelectorAll('section');
 const scrollDots = document.querySelectorAll('.scroll-dot');
 
-// Add smooth scrolling to scroll dots
+// Function to check for text overlap with content
+function checkForOverlap() {
+  const contentArea = document.querySelector('section');
+  const contentRect = contentArea.getBoundingClientRect();
+  const contentMiddle = contentRect.left + (contentRect.width / 2);
+  
+  scrollDots.forEach(dot => {
+    const textElement = dot.querySelector('.section-name');
+    const textRect = textElement.getBoundingClientRect();
+    
+    if (textRect.right > contentMiddle - 50) {
+      dot.classList.add('overlap');
+    } else {
+      dot.classList.remove('overlap');
+    }
+  });
+}
+
+// Smooth scroll to section when clicking a dot
 scrollDots.forEach(dot => {
-    dot.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = dot.getAttribute('href');
-        document.querySelector(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
+  dot.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = dot.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    
+    scrollDots.forEach(d => d.classList.remove('active'));
+    dot.classList.add('active');
+    
+    targetSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
     });
+  });
 });
 
-// Update active section on scroll
-const updateActiveSection = () => {
-    const scrollPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
+// Debounce function
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
 
-    // Handle last section (awards)
-    if (scrollPosition + windowHeight >= documentHeight - 100) {
-        scrollDots.forEach(dot => dot.classList.remove('active'));
-        scrollDots[scrollDots.length - 1].classList.add('active');
-        return;
+// Function to check which section is in view
+function updateActiveSection() {
+  const viewportMiddle = window.scrollY + window.innerHeight / 2;
+  
+  let closestSection = null;
+  let closestDistance = Infinity;
+  
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const sectionMiddle = section.offsetTop + rect.height / 2;
+    const distance = Math.abs(viewportMiddle - sectionMiddle);
+    
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestSection = section;
     }
+  });
+  
+  if (closestSection) {
+    const currentDot = document.querySelector(`.scroll-dot[href="#${closestSection.id}"]`);
+    if (currentDot && !currentDot.classList.contains('active')) {
+      scrollDots.forEach(dot => dot.classList.remove('active'));
+      currentDot.classList.add('active');
+      
+      // Reset animation
+      const oldDot = currentDot.querySelector('.dot');
+      const newDot = oldDot.cloneNode(true);
+      oldDot.parentNode.replaceChild(newDot, oldDot);
+    }
+  }
+}
 
-    // Handle all other sections
-    let activeIndex = -1;
-    const viewportTop = scrollPosition;
-    const viewportBottom = scrollPosition + windowHeight;
-    const viewportCenter = (viewportTop + viewportBottom) / 2;
+// Add event listeners with shorter debounce
+window.addEventListener('scroll', debounce(() => {
+  updateActiveSection();
+  checkForOverlap();
+}, 50));
 
-    // Skip the intro section in the calculation by starting from index 1
-    sections.forEach((section, index) => {
-        if (index === 0) return; // Skip intro section
-        
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionCenter = sectionTop + (sectionHeight / 2);
+window.addEventListener('resize', debounce(() => {
+  updateActiveSection();
+  checkForOverlap();
+}, 50));
 
-        // Calculate how close the viewport center is to the section center
-        const distanceToSection = Math.abs(viewportCenter - sectionCenter);
-        
-        // If this is the first section we're checking or it's closer than our current best match
-        if (activeIndex === -1 || distanceToSection < Math.abs(viewportCenter - sections[activeIndex + 1].offsetTop - (sections[activeIndex + 1].offsetHeight / 2))) {
-            activeIndex = index - 1;
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+  updateActiveSection();
+  checkForOverlap();
+});
+
+// Update on window resize
+window.addEventListener('resize', debounce(updateActiveSection, 50));
+
+// Update mobile nav active state
+const updateMobileNav = () => {
+  const scrollPosition = window.scrollY;
+  const viewportHeight = window.innerHeight;
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+  
+  sections.forEach((section, index) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= viewportHeight/2 && rect.bottom >= viewportHeight/2) {
+      mobileNavLinks.forEach(link => {
+        if (link.getAttribute('href') === '#' + section.id) {
+          link.style.color = '#007bff';
+        } else {
+          link.style.color = '#333';
         }
-    });
-
-    if (activeIndex !== -1) {
-        scrollDots.forEach(dot => dot.classList.remove('active'));
-        scrollDots[activeIndex].classList.add('active');
+      });
     }
+  });
 };
 
-// Add scroll event listener
-window.addEventListener('scroll', updateActiveSection);
+// Add mobile nav update to scroll listener
+window.addEventListener('scroll', updateMobileNav);
 
-// Initialize active section on page load
-document.addEventListener('DOMContentLoaded', updateActiveSection);
+// Add smooth scrolling to mobile nav
+document.querySelectorAll('.mobile-nav a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href');
+    document.querySelector(targetId).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
