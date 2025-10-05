@@ -136,7 +136,7 @@ section {
 }
 
 /* Hide scroll bar on mobile */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .scroll-bar {
     display: none;
   }
