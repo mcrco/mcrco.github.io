@@ -3,375 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f9f9f9">
+    <meta name="theme-color" content="#ffffff">
     <meta name="description" content="Marco Yang - CS at Caltech, interested in Machine Learning and Software Engineering">
     <title>Marco Yang</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="https://lh3.googleusercontent.com/a/ACg8ocKUb9XpJd1PV-bfBIgfz2JPaHHAtVaLNbECaYHozb8MHu-jq39YmA=s83-c-mo">
 </head>
 <body>
-  <!-- Table of Contents (Scroll Bar) -->
-  <div class="scroll-bar">
-    <div class="scroll-track">
-      <a href="#experiences" class="scroll-dot" data-section="experiences">
-        <span class="dot"></span>
-        <span class="section-name">Experiences</span>
-      </a>
-      <a href="#projects" class="scroll-dot" data-section="projects">
-        <span class="dot"></span>
-        <span class="section-name">Projects</span>
-      </a>
-      <a href="#skills" class="scroll-dot" data-section="skills">
-        <span class="dot"></span>
-        <span class="section-name">Skills</span>
-      </a>
-      <a href="#coursework" class="scroll-dot" data-section="coursework">
-        <span class="dot"></span>
-        <span class="section-name">Coursework</span>
-      </a>
-      <a href="#awards" class="scroll-dot" data-section="awards">
-        <span class="dot"></span>
-        <span class="section-name">Awards</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- Intro Section -->
   <section id="intro">
     <h1>Marco Yang</h1>
     <p class="intro-text">
       CS at Caltech, interested in Machine Learning and Software Engineering.
     </p>
-    <div class="contact-icons">
-      <a href="mailto:myang2@caltech.edu" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/marco-yang-17189a203" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/mcrco" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="resume.pdf" target="_blank" rel="noopener noreferrer" title="Resume"><i class="fas fa-file-alt"></i></a>
-    </div>
+    <ul class="contact-links">
+      <li><a href="mailto:myang2@caltech.edu">email</a></li>
+      <li><a href="https://linkedin.com/in/marco-yang-17189a203" target="_blank" rel="noopener noreferrer">linkedin</a></li>
+      <li><a href="https://github.com/mcrco" target="_blank" rel="noopener noreferrer">github</a></li>
+      <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer">resume</a></li>
+    </ul>
   </section>
 
-  <!-- Experiences Section -->
   <section id="experiences">
     <h2>Experience</h2>
-    <div class="experience-card">
+    <div class="entry experience-card">
+      <h3>Member of Technical Staff Intern, Parallel Web Systems</h3>
+      <p class="entry-meta">Incoming · Sept 2026 – Dec 2026</p>
+    </div>
+    <div class="entry experience-card">
+      <h3>Software Engineering Intern, Two Sigma</h3>
+      <p class="entry-meta">Current · Jun 2026 – Aug 2026</p>
+    </div>
+    <div class="entry experience-card">
       <h3>Software Engineering Intern, Glean</h3>
-      <p>Jun 2025 - Sept 2025</p>
+      <p class="entry-meta">Jun 2025 – Sept 2025</p>
       <ul>
-        <li>AI team (LLM Assistant + Agent Quality) at late-stage startup that provides Search and Assistant for enterprise data.</li>
-        <li>Implemented, deployed, and monitored LLM-as-a-judge evaluations and dataset pipelines for agents.</li>
-        <li>Pushed new automated prompt optimization feature for Glean agent builder.</li>
-        <li>Miscellaneous features and bug fixes in Glean’s LLM workflow engine/agent backend framework in Golang.</li>
+        <li>AI team (LLM Assistant + Agent Quality) at enterprise search and assistant startup.</li>
+        <li>Built and deployed LLM-as-a-judge evaluations and automated evalset pipelines for agents.</li>
+        <li>Shipped automated prompt optimization for the agent builder.</li>
+        <li>Miscellaneous features and bug fixes in the Go agent backend.</li>
       </ul>
-      <div class="skills">
-        <span class="skill-tag">Go</span>
-        <span class="skill-tag">LLM</span>
-        <span class="skill-tag">Machine Learning</span>
-      </div>
     </div>
-    <div class="experience-card">
-      <h3>Machine Learning Researcher, Caltech Vision Lab</h3>
-      <p>Mar 2024 - Dec 2024</p>
+    <div class="entry experience-card">
+      <h3>Summer Undergraduate Research Fellow, Caltech Vision Lab</h3>
+      <p class="entry-meta">Mar 2024 – Aug 2024</p>
       <ul>
-        <li>Novel approach to cross-domain video action recognition using generative diffusion models.</li>
-        <li>Modified CompVis’ Stable Diffusion 1.5 and Hugging Face implementation of Modelscope (text-to-video model).</li> 
-        <li>Injected code to extract cross-attention maps from UNet and gained deep understanding of generative diffusion models.</li>
-        <li>Injected into CompVis’ Stable Diffusion 1.5 and Hugging Face implementation of Modelscope.</li>
-        <li>Implemented multiple classification heads (MLP, 3D CNN, Transformer) for action classification on diffusion features.</li>
+        <li>Researched cross-domain video action recognition with generative diffusion models.</li>
+        <li>Modified Stable Diffusion 1.5 and Hugging Face Modelscope to extract cross-attention maps from UNet.</li>
+        <li>Implemented classification heads (MLP, 3D CNN, Transformer) in PyTorch for downstream tasks on BEAR dataset.</li>
       </ul>
-      <div class="skills">
-        <span class="skill-tag">PyTorch</span>
-        <span class="skill-tag">Hugging Face</span>
-        <span class="skill-tag">WandB</span>
-        <span class="skill-tag">Machine Learning</span>
-        <span class="skill-tag">Computer Vision</span>
-      </div>
     </div>
-    <div class="experience-card">
+    <div class="entry experience-card">
       <h3>Full Stack Software Developer Intern, Fathomd</h3>
-      <p>Aug 2021 - Jun 2023</p>
+      <p class="entry-meta">Aug 2021 – Jun 2023</p>
       <ul>
-        <li>Developed educational video games for business schools like MIT Sloan, with a focus on the instructor dashboard.</li>
-        <li>Created React components and added routes for new pages (Meteor/Ironrouter) in frontend.</li>
-        <li>Developed new REST API endpoints and modified DTO/DAO layers for MongoDB in a Dropwizard Java backend.</li>
-        <li>Migrated the instructor dashboard from BlazeJS to React.</li> 
-        <li>Implemented a “classes” feature allowing instructors to manage tailored game sessions for different classes.</li>
-        <li>Collaborated with a team using tools like Jira and GitLab, gaining experience in agile software development workflows.</li>
+        <li>Full-stack development of educational video games and instructor dashboard for business schools.</li>
+        <li>React and Meteor frontend with Dropwizard Java REST API backend.</li>
       </ul>
-      <div class="skills">
-        <span class="skill-tag">React</span>
-        <span class="skill-tag">Meteor.js</span>
-        <span class="skill-tag">Java</span>
-        <span class="skill-tag">Dropwizard</span>
-        <span class="skill-tag">REST API</span>
-        <span class="skill-tag">Full-stack</span>
-      </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <div class="project-header">
-          <h3>Caltech Course LLM Agent</h3>
-          <div class="project-links">
-            <a href="https://github.com/mcrco/coursebot" target="_blank" rel="noopener noreferrer" title="GitHub Repository"><i class="fab fa-github"></i></a>
-            <a href="https://caltech-coursebot.onrender.com" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-          </div>
-        </div>
-        <p>LLM with retrieval-augmented generation (scraped course catalog and 2 years of student feedback) that answers Caltech course questions.</p>
-        <div class="skills">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">Flask</span>
-          <span class="skill-tag">LLM</span>
-          <span class="skill-tag">RAG</span>
-          <span class="skill-tag">Web scraping</span>
-          <span class="skill-tag">Langchain</span>
-          <span class="skill-tag">Langgraph</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Selenium</span>
-          <span class="skill-tag">Vite</span>
-          <span class="skill-tag">Typescript</span>
+    <div class="entry project-card">
+      <div class="entry-header">
+        <h3>CUDA Qwen3.5 Inference</h3>
+        <div class="entry-links project-links">
+          <a href="https://github.com/mcrco/qwen35-cuda" target="_blank" rel="noopener noreferrer">github</a>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-header">
-          <h3>Caltech Course Graph</h3>
-          <div class="project-links">
-            <a href="https://github.com/mcrco/coursegraph" target="_blank" rel="noopener noreferrer" title="GitHub Repository"><i class="fab fa-github"></i></a>
-            <a href="https://coursegraph.onrender.com" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-          </div>
-        </div>
-        <p>Interactive graph visualization and prerequisite finder for Caltech courses.</p>
-        <div class="skills">
-          <span class="skill-tag">Vite</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Typescript</span>
-          <span class="skill-tag">Tailwind CSS</span>
+      <p>CUDA autoregressive inference engine for Qwen3.5 with flash attention and Gated DeltaNet linear-attention layers. CS 179 final project.</p>
+    </div>
+    <div class="entry project-card">
+      <div class="entry-header">
+        <h3>Catan RL Bot</h3>
+        <div class="entry-links project-links">
+          <a href="https://github.com/mcrco/catanrl" target="_blank" rel="noopener noreferrer">github</a>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-header">
-          <h3>Tennis Ranker</h3>
-          <div class="project-links">
-            <a href="https://github.com/mcrco/tennisranker" target="_blank" rel="noopener noreferrer" title="GitHub Repository"><i class="fab fa-github"></i></a>
-            <a href="https://tennisranker.us" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-          </div>
-        </div>
-        <p>Web app that tracks tennis match scores and automatically ranks players.</p>
-        <div class="skills">
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Meteor.js</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Tailwind CSS</span>
+      <p>Reinforcement learning bot for Settlers of Catan trained with DAgger and PPO. ~70% win rate vs Catanatron baseline bots.</p>
+    </div>
+    <div class="entry project-card">
+      <div class="entry-header">
+        <h3>Caltech Course LLM Agent</h3>
+        <div class="entry-links project-links">
+          <a href="https://github.com/mcrco/coursebot" target="_blank" rel="noopener noreferrer">github</a>
+          <span> · </span>
+          <span class="archived">demo archived</span>
         </div>
       </div>
+      <p>LLM with retrieval-augmented generation (scraped course catalog and 2 years of student feedback) that answers Caltech course questions.</p>
+    </div>
+    <div class="entry project-card">
+      <div class="entry-header">
+        <h3>Caltech Course Graph</h3>
+        <div class="entry-links project-links">
+          <a href="https://github.com/mcrco/coursegraph" target="_blank" rel="noopener noreferrer">github</a>
+          <span> · </span>
+          <a href="https://coursegraph.onrender.com" target="_blank" rel="noopener noreferrer">demo</a>
+        </div>
+      </div>
+      <p>Interactive graph visualization and prerequisite finder for Caltech courses.</p>
+    </div>
+    <div class="entry project-card">
+      <div class="entry-header">
+        <h3>Tennis Ranker</h3>
+        <div class="entry-links project-links">
+          <a href="https://github.com/mcrco/tennisranker" target="_blank" rel="noopener noreferrer">github</a>
+          <span> · </span>
+          <span class="archived">demo archived</span>
+        </div>
+      </div>
+      <p>Web app that tracks tennis match scores and automatically ranks players. Made for my high school tennis team tryouts.</p>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h3>Programming Languages</h3>
-        <div class="skills-tags">
-          <span class="skill-tag highlighted">Python</span>
-          <span class="skill-tag highlighted">C</span>
-          <span class="skill-tag highlighted">Java</span>
-          <span class="skill-tag highlighted">TypeScript</span>
-          <span class="skill-tag">C++</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">MATLAB</span>
-          <span class="skill-tag">Mathematica</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3>Frameworks & Libraries</h3>
-        <div class="skills-tags">
-          <span class="skill-tag highlighted">PyTorch</span>
-          <span class="skill-tag highlighted">React</span>
-          <span class="skill-tag">TensorFlow</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">Vite</span>
-          <span class="skill-tag">Flask</span>
-          <span class="skill-tag">Langchain</span>
-          <span class="skill-tag">Meteor.js</span>
-          <span class="skill-tag">Dropwizard</span>
-          <span class="skill-tag">Selenium</span>
-          <span class="skill-tag">Pinecone</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3>Technologies & Concepts</h3>
-        <div class="skills-tags">
-          <span class="skill-tag highlighted">Machine Learning</span>
-          <span class="skill-tag highlighted">Computer Vision</span>
-          <span class="skill-tag highlighted">Full-stack</span>
-          <span class="skill-tag">LLM</span>
-          <span class="skill-tag">RAG</span>
-          <span class="skill-tag">Linux</span>
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">Shell scripting</span>
-          <span class="skill-tag">Web scraping</span>
-          <span class="skill-tag">Generative Diffusion Models</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Coursework Section -->
   <section id="coursework">
     <h2>Coursework</h2>
-    <div class="course-grid">
-      <div class="course-card">
-        <h3>CS 2: Data Structures</h3>
-        <p>Fundamental data structures in Java, such as graphs, tries, and more.</p>
-        <div class="skills">
-          <span class="skill-tag">Data Structures</span>
-          <span class="skill-tag">Java</span>
-        </div>
-      </div>
-      
-      <div class="course-card">
-        <h3>CS 21: Decidability and Tractability</h3>
-        <p>Study of computational complexity theory, exploring the boundaries between tractable and intractable problems.</p>
-        <div class="skills">
-          <span class="skill-tag">Complexity Theory</span>
-          <span class="skill-tag">Algorithms</span>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <h3>CS 24: Computing Systems</h3>
-        <p>Operating systems and low-level programming concepts.</p>
-        <div class="skills">
-          <span class="skill-tag">C</span>
-          <span class="skill-tag">Assembly</span>
-          <span class="skill-tag">Operating Systems</span>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <h3>CS 38: Algorithms</h3>
-        <p>Advanced algorithmic techniques, such as greedy approach, divide and conquer, dynamic programming, linear programming.</p>
-        <div class="skills">
-          <span class="skill-tag">Algorithms</span>
-          <span class="skill-tag">Graph Theory</span>
-          <span class="skill-tag">Time complexity</span>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <h3>CS 156ab: Learning Systems</h3>
-        <p>Theory, algorithms, and applications of automated learning.</p>
-        <div class="skills">
-          <span class="skill-tag">Machine Learning</span>
-          <span class="skill-tag">Statistical Learning</span>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <h3>CS 155: Machine Learning/Data Mining</h3>
-        <p>Popular methods in machine learning and data mining, with an emphasis on developing a working understanding of how to apply these methods in practice</p>
-        <div class="skills">
-          <span class="skill-tag">Machine Learning</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">Neural Networks</span>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <h3>CS 159: Advanced Topics in ML</h3>
-        <p>Advanced machine learning concepts with focus on deep learning architectures and applications.</p>
-        <div class="skills">
-          <span class="skill-tag">Deep Learning</span>
-          <span class="skill-tag">PyTorch</span>
-          <span class="skill-tag">Computer Vision</span>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <h3>CS 172: Distributed Computing</h3>
-        <p>Programming distributed systems, with applications in sensor networks, cloud computing, and machine learning/statistics.</p>
-        <div class="skills">
-          <span class="skill-tag">Distributed Systems</span>
-          <span class="skill-tag">Distributed Algorithms</span>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <h3>ACM 104: Applied Linear Algebra</h3>
-        <p>Applications of linear algebra in computer science and engineering.</p>
-        <div class="skills">
-          <span class="skill-tag">Linear Algebra</span>
-          <span class="skill-tag">Matlab</span>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <h3>Ma 121a: Combinatorial Analysis</h3>
-        <p>A survey of modern combinatorial mathematics, including graph theory and extremal problems.</p>
-        <div class="skills">
-          <span class="skill-tag">Graph Theory</span>
-          <span class="skill-tag">Algorithms</span>
-          <span class="skill-tag">Combinatorics</span>
-        </div>
-      </div>
-    </div>
+    <ul class="course-list">
+      <li>CS 24: Computing Systems</li>
+      <li>CS 38: Algorithms</li>
+      <li>CS 148ab: Vision and Language Models</li>
+      <li>CS 155: Machine Learning/Data Mining</li>
+      <li>CS 159: Advanced Topics in ML</li>
+      <li>CS 165: Foundations of Machine Learning and Statistical Inference</li>
+      <li>CS 179: GPU Programming</li>
+    </ul>
   </section>
 
-  <!-- Awards Section -->
   <section id="awards">
     <h2>Awards</h2>
-    <div class="awards-grid">
-        <div class="award-card">
-        <h3>William Lowell Putnam Mathematical Competition</h3>
-        <p>Top 1000 | December 2023</p>
-        <p>Score of 19 (top 1000) in the largest North American intercollegiate math competition.</p>
-        </div>
-        <div class="award-card">
-        <h3>United States of America Computing Olympiad</h3>
-        <p>Gold Division | February 2021</p>
-        <p>Gold Division in high school programming competition (theoretical CS, data structures, and algorithms).</p>
-        </div>
-        <div class="award-card">
-        <h3>American Math Competition/American Invitational Math Exam</h3>
-        <p>AIME Qualifier | November 2021</p>
-        <p>Qualified for AIME 3 times by placing top 2.5% in American Math Competition (high school math competition), highest score of 6 on AIME.</p>
-        </div>
+    <div class="entry award-card">
+      <h3>William Lowell Putnam Mathematical Competition</h3>
+      <p class="entry-meta">Top 1000 · December 2023</p>
+      <p>Score of 19 (top 1000) in the largest North American intercollegiate math competition.</p>
+    </div>
+    <div class="entry award-card">
+      <h3>United States of America Computing Olympiad</h3>
+      <p class="entry-meta">Gold Division · February 2021</p>
+      <p>Gold Division in high school programming competition (theoretical CS, data structures, and algorithms).</p>
+    </div>
+    <div class="entry award-card">
+      <h3>American Math Competition/American Invitational Math Exam</h3>
+      <p class="entry-meta">AIME Qualifier · November 2021</p>
+      <p>Qualified for AIME 3 times by placing top 2.5% in American Math Competition (high school math competition), highest score of 6 on AIME.</p>
     </div>
   </section>
-
-  <!-- Mobile Navigation -->
-  <nav class="mobile-nav">
-    <a href="#experiences">
-      <i class="fas fa-briefcase"></i>
-      <span>Experience</span>
-    </a>
-    <a href="#projects">
-      <i class="fas fa-code"></i>
-      <span>Projects</span>
-    </a>
-    <a href="#skills">
-      <i class="fas fa-tools"></i>
-      <span>Skills</span>
-    </a>
-    <a href="#coursework">
-      <i class="fas fa-book"></i>
-      <span>Courses</span>
-    </a>
-    <a href="#awards">
-      <i class="fas fa-trophy"></i>
-      <span>Awards</span>
-    </a>
-  </nav>
-
-  <script src="script.js"></script>
 </body>
 </html>
