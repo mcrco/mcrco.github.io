@@ -1,10 +1,12 @@
+// Build: typst compile --font-path fonts resume.typ   (or: make resume)
+
 #let accent = rgb("#1a1a1a")
 #let muted = rgb("#555555")
 #let rule = 0.55pt + accent
 #let section-gap = 1.4em
 
 #set page(margin: 0.5in)
-#set text(font: "Libertinus Serif", size: 10pt, fill: accent)
+#set text(font: "Lora", size: 9.5pt, fill: accent)
 #set par(leading: 0.84em, spacing: 0.55em)
 #show heading: none
 #show list: set block(above: 0.12em, below: 0.1em)
@@ -14,8 +16,12 @@
   body-indent: 0.35em,
 )
 
+#show link: underline(none)
+
+#let serif = "Lora"
+
 #let section-header(title) = {
-  text(size: 10.5pt, weight: "semibold", tracking: 0.04em)[#title]
+  text(font: serif, size: 10.5pt, weight: "medium")[#title]
   v(0.14em)
   line(length: 100%, stroke: rule)
   v(0.22em)
@@ -42,7 +48,7 @@
 }
 
 #let skill-row(label, items) = grid(
-  columns: (4.8em, 1fr),
+  columns: (5.4em, 1fr),
   column-gutter: 0.6em,
   text(weight: "semibold", size: 9.5pt)[#label],
   items,
@@ -66,24 +72,24 @@
 }
 
 #align(center)[
-  #text(size: 21pt, weight: "regular", tracking: -0.01em)[Marco Yang]
+  #text(font: serif, size: 21pt, weight: "regular", tracking: -0.01em)[Marco Yang]
   #v(0.32em)
   #text(size: 9pt, fill: muted)[
     510-738-8001
-    #h(0.35em)#text(fill: accent)[·]#h(0.35em)
-    myang2\@caltech.edu
-    #h(0.35em)#text(fill: accent)[·]#h(0.35em)
-    linkedin/marco-yang-17189a203
-    #h(0.35em)#text(fill: accent)[·]#h(0.35em)
-    github/mcrco
-    #h(0.35em)#text(fill: accent)[·]#h(0.35em)
-    marcoya.ng
+    #h(0.1em)#text(fill: accent)[·]#h(0.1em)
+    #link("mailto:myang2@caltech.edu")[#text(fill: muted)[myang2\@caltech.edu]]
+    #h(0.1em)#text(fill: accent)[·]#h(0.1em)
+    #link("https://linkedin.com/in/marco-yang-17189a203")[#text(fill: muted)[linkedin/marco-yang-17189a203]]
+    #h(0.1em)#text(fill: accent)[·]#h(0.1em)
+    #link("https://github.com/mcrco")[#text(fill: muted)[github/mcrco]]
+    #h(0.1em)#text(fill: accent)[·]#h(0.1em)
+    #link("https://marcoya.ng")[#text(fill: muted)[marcoya.ng]]
   ]
 ]
 
 #v(0.3em)
 
-#resume-section[Education][
+#resume-section[education][
   #grid(
     columns: (1fr, auto),
     align: (left, right),
@@ -95,7 +101,7 @@
   #text(size: 9.5pt, fill: muted)[B.S. Computer Science · GPA 3.91 · Pasadena, CA]
 ]
 
-#resume-section[Skills][
+#resume-section[skills][
   #skill-row[Languages][C, C++, Java, Go, Python, TypeScript]
   #v(0.24em)
   #skill-row[ML & AI][PyTorch, Agentic Frameworks, Computer Vision, Generative AI, Reinforcement Learning]
@@ -103,7 +109,7 @@
   #skill-row[Systems][CUDA, Linux, Git, Shell]
 ]
 
-#resume-section[Experience][
+#resume-section[experience][
   #entry(
     [Member of Technical Staff Intern · Parallel Web Systems],
     [Sep 2026 -- Dec 2026],
@@ -151,7 +157,7 @@
   )
 ]
 
-#resume-section[Projects][
+#resume-section[projects][
   #entry(
     [CUDA Qwen3.5 Inference],
     [github],
@@ -181,19 +187,19 @@
   )
 ]
 
-#resume-section[Relevant Coursework][
+#resume-section[relevant coursework][
   #text(size: 9.5pt)[
     Data Structures, Algorithms, Advanced Machine Learning, Large Language and Vision Models, GPU Programming, Computing Systems, Networks, Relational Databases, Applied Linear Algebra, Statistical Inference, Information Theory
   ]
 ]
 
-#resume-section[Honors & Accolades][
+#resume-section[honors & accolades][
   #honor([William Lowell Putnam], [Dec 2023], detail: [Top 1000 · 19 pts])
   #honor([USACO], [Feb 2021], detail: [Gold Division])
   #honor([AMC / AIME], [Nov 2021], detail: [3× qualifier])
 ]
 
-#resume-section[Fun Facts][
+#resume-section[fun facts][
   #v(0.28em)
   #text(size: 9.5pt)[
     Caltech tennis team member. Formerly assistant program director for ACEing Autism (Caltech branch). Biked from Denver to NYC.
