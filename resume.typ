@@ -16,9 +16,14 @@
   body-indent: 0.35em,
 )
 
-#show link: underline(none)
+#show link: it => {
+  set text(fill: muted)
+  underline(none)
+  it
+}
 
 #let serif = "Lora"
+#let contact-sep = [#h(0.1em)#text(fill: accent)[·]#h(0.1em)]
 
 #let section-header(title) = {
   text(font: serif, size: 10.5pt, weight: "medium")[#title]
@@ -74,17 +79,16 @@
 #align(center)[
   #text(font: serif, size: 21pt, weight: "regular", tracking: -0.01em)[Marco Yang]
   #v(0.32em)
-  #text(size: 9pt, fill: muted)[
-    510-738-8001
-    #h(0.1em)#text(fill: accent)[·]#h(0.1em)
-    #link("mailto:myang2@caltech.edu")[#text(fill: muted)[myang2\@caltech.edu]]
-    #h(0.1em)#text(fill: accent)[·]#h(0.1em)
-    #link("https://linkedin.com/in/marco-yang-17189a203")[#text(fill: muted)[linkedin/marco-yang-17189a203]]
-    #h(0.1em)#text(fill: accent)[·]#h(0.1em)
-    #link("https://github.com/mcrco")[#text(fill: muted)[github/mcrco]]
-    #h(0.1em)#text(fill: accent)[·]#h(0.1em)
-    #link("https://marcoya.ng")[#text(fill: muted)[marcoya.ng]]
-  ]
+  #set text(size: 9pt, fill: muted)
+  510-738-8001
+  #contact-sep
+  #link("mailto:myang2@caltech.edu")[myang2\@caltech.edu]
+  #contact-sep
+  #link("https://linkedin.com/in/marco-yang-17189a203")[linkedin/marco-yang-17189a203]
+  #contact-sep
+  #link("https://github.com/mcrco")[github/mcrco]
+  #contact-sep
+  #link("https://marcoya.ng")[marcoya.ng]
 ]
 
 #v(0.3em)
