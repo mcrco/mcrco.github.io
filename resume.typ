@@ -99,7 +99,7 @@
     align: (left, right),
     gutter: 0.8em,
     text(weight: "semibold")[California Institute of Technology],
-    text(size: 9pt, fill: muted)[Mar 2026],
+    text(size: 9pt, fill: muted)[Mar 2027],
   )
   #v(0.05em)
   #text(size: 9.5pt, fill: muted)[B.S. Computer Science · GPA 3.91 · Pasadena, CA]
