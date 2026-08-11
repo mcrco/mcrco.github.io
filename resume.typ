@@ -127,7 +127,7 @@
     [Software Engineering Intern · Two Sigma],
     [Jun 2026 -- Aug 2026],
     body: [
-      - Related to simulations.
+      - Related to debugging simulations.
     ],
   )
 
