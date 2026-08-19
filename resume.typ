@@ -114,18 +114,19 @@
 ]
 
 #resume-section[experience][
-  #entry(
+  /* #entry(
     [Member of Technical Staff Intern · Parallel Web Systems],
     [Sep 2026 -- Dec 2026],
     top: 0em,
     body: [
       - Incoming, building search infrastructure for agents.
     ],
-  )
+  ) */
 
   #entry(
     [Software Engineering Intern · Two Sigma],
     [Jun 2026 -- Aug 2026],
+    top: 0em,
     body: [
       - Related to debugging simulations.
     ],
