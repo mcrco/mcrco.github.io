@@ -114,19 +114,18 @@
 ]
 
 #resume-section[experience][
-  /* #entry(
-    [Member of Technical Staff Intern · Parallel Web Systems],
-    [Sep 2026 -- Dec 2026],
+  #entry(
+    [Software Engineer · Mechanize],
+    [Sep 2026 -- Present],
     top: 0em,
     body: [
-      - Incoming, building search infrastructure for agents.
+      - Evals and RL tasks.
     ],
-  ) */
+  )
 
   #entry(
     [Software Engineering Intern · Two Sigma],
     [Jun 2026 -- Aug 2026],
-    top: 0em,
     body: [
       - Related to debugging simulations.
     ],
