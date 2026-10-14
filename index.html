@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="light dark">
     <meta name="description" content="Marco Yang - CS at Caltech, interested in Machine Learning and Software Engineering">
     <title>Marco Yang</title>
+    <link rel="canonical" href="https://marcoya.ng/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marcoya.ng/">
+    <meta property="og:title" content="Marco Yang">
+    <meta property="og:description" content="CS at Caltech, interested in Machine Learning and Software Engineering.">
+    <meta name="twitter:card" content="summary">
+    <link rel="preload" href="fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="https://lh3.googleusercontent.com/a/ACg8ocKUb9XpJd1PV-bfBIgfz2JPaHHAtVaLNbECaYHozb8MHu-jq39YmA=s83-c-mo">
 </head>
 <body>
@@ -28,7 +36,7 @@
     <h2>Experience</h2>
     <div class="entry experience-card">
       <h3>Software Engineer, Mechanize</h3>
-      <p class="entry-meta">Current · Sept 2026 – Present</p>
+      <p class="entry-meta">Sept 2026 – Present</p>
       <p>Evals and RL tasks.</p>
     </div>
     <div class="entry experience-card">
@@ -42,14 +50,14 @@
       <p>LLM judge evals, automated evalset generation, prompt optimization, and miscellaneous agent engine work.</p>
     </div>
     <div class="entry experience-card">
+      <h3>Teaching Assistant, Intro to Software Design in C</h3>
+      <p class="entry-meta">Spring 2025</p>
+      <p>Guided student projects building a physics engine with collision and SDL graphics, and a video game.</p>
+    </div>
+    <div class="entry experience-card">
       <h3>Summer Undergraduate Research Fellow, Caltech Vision Lab</h3>
       <p class="entry-meta">Jun 2024 – Aug 2024</p>
       <p>Cross-domain video action recognition with generative diffusion models' attention maps.</p>
-    </div>
-    <div class="entry experience-card">
-      <h3>Full Stack Software Developer Intern, Fathomd</h3>
-      <p class="entry-meta">Aug 2021 – Jun 2023</p>
-      <p>Full-stack development of educational video games and instructor dashboard for business schools.</p>
     </div>
   </section>
 
@@ -71,7 +79,7 @@
           <a href="https://github.com/mcrco/catanrl" target="_blank" rel="noopener noreferrer">github</a>
         </div>
       </div>
-      <p>Reinforcement learning bot for Settlers of Catan trained with DAgger and PPO. ~70% win rate vs Catanatron baseline bots.</p>
+      <p>Reinforcement learning bot for Settlers of Catan trained with DAgger, PPO, and AlphaZero (WIP). ~70% win rate vs Catanatron baseline bots.</p>
     </div>
     <div class="entry project-card">
       <div class="entry-header">
@@ -95,16 +103,13 @@
       </div>
       <p>Interactive graph visualization and prerequisite finder for Caltech courses.</p>
     </div>
-    <div class="entry project-card">
-      <div class="entry-header">
-        <h3>Tennis Ranker</h3>
-        <div class="entry-links project-links">
-          <a href="https://github.com/mcrco/tennisranker" target="_blank" rel="noopener noreferrer">github</a>
-          <span> · </span>
-          <span class="archived">demo archived</span>
-        </div>
-      </div>
-      <p>Web app that tracks tennis match scores and automatically ranks players. Made for my high school tennis team tryouts.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="entry">
+      <h3>California Institute of Technology</h3>
+      <p class="entry-meta">B.S. Computer Science · On leave</p>
     </div>
   </section>
 
@@ -121,19 +126,19 @@
     </ul>
   </section>
 
-  <section id="awards">
-    <h2>Awards</h2>
+  <section id="olympiads">
+    <h2>Olympiads</h2>
     <div class="entry award-card">
-      <h3>William Lowell Putnam Mathematical Competition</h3>
-      <p class="entry-meta">Top 1000 · December 2023</p>
+      <h3>Putnam Top 1000</h3>
+      <p class="entry-meta">December 2023</p>
     </div>
     <div class="entry award-card">
-      <h3>United States of America Computing Olympiad</h3>
-      <p class="entry-meta">Gold Division · February 2021</p>
+      <h3>USACO Gold Division</h3>
+      <p class="entry-meta">February 2021</p>
     </div>
     <div class="entry award-card">
-      <h3>American Math Competition/American Invitational Math Exam</h3>
-      <p class="entry-meta">AIME Qualifier · 2019, 2020, 2021</p>
+      <h3>AIME Qualifier</h3>
+      <p class="entry-meta">2019, 2020, 2021</p>
     </div>
   </section>
 </body>

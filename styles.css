@@ -1,5 +1,33 @@
 /* Flat, basic personal site */
 
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/IBMPlexMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/IBMPlexMono-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Lora";
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Lora-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Lora";
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/Lora-Medium.woff2") format("woff2");
+}
+
 :root {
   --text: #1a1a1a;
   --muted: #555;
@@ -7,6 +35,16 @@
   --bg: #fff;
   --link: #1a1a1a;
   --max-width: 42rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #e4e4e4;
+    --muted: #9a9a9a;
+    --border: #333;
+    --bg: #111;
+    --link: #e4e4e4;
+  }
 }
 
 * {

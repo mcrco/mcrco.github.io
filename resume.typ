@@ -80,8 +80,6 @@
   #text(font: serif, size: 21pt, weight: "regular", tracking: -0.01em)[Marco Yang]
   #v(0.32em)
   #set text(size: 9pt, fill: muted)
-  510-738-8001
-  #contact-sep
   #link("mailto:myang2@caltech.edu")[myang2\@caltech.edu]
   #contact-sep
   #link("https://linkedin.com/in/marco-yang-17189a203")[linkedin/marco-yang-17189a203]
@@ -99,7 +97,7 @@
     align: (left, right),
     gutter: 0.8em,
     text(weight: "semibold")[California Institute of Technology],
-    text(size: 9pt, fill: muted)[Mar 2027],
+    text(size: 9pt, fill: muted)[On leave],
   )
   #v(0.05em)
   #text(size: 9.5pt, fill: muted)[B.S. Computer Science · GPA 3.91 · Pasadena, CA]
@@ -164,7 +162,7 @@
 #resume-section[projects][
   #entry(
     [CUDA Qwen3.5 Inference],
-    [github],
+    link("https://github.com/mcrco/qwen35-cuda")[github],
     top: 0em,
     body: [
       - CUDA autoregressive inference engine for Qwen3.5 with single-token prediction.
@@ -174,16 +172,16 @@
 
   #entry(
     [Catan RL Bot],
-    [github],
+    link("https://github.com/mcrco/catanrl")[github],
     body: [
       - RL bot for Settlers of Catan trained with DAgger, PPO, and AlphaZero (WIP).
-      - ~70% win rate vs Catanatron baseline bots.
+      - \~70% win rate vs Catanatron baseline bots.
     ],
   )
 
   #entry(
     [Caltech RAG],
-    [github · demo archived],
+    [#link("https://github.com/mcrco/coursebot")[github] · demo archived],
     body: [
       - LLM RAG app as unified interface for Caltech course reviews and catalogs.
       - Flask, LangChain, LangGraph, Qdrant.
@@ -193,14 +191,14 @@
 
 #resume-section[relevant coursework][
   #text(size: 9.5pt)[
-    Data Structures, Algorithms, Advanced Machine Learning, Large Language and Vision Models, GPU Programming, Computing Systems, Networks, Relational Databases, Applied Linear Algebra, Statistical Inference, Information Theory
+    Data Structures, Algorithms, Machine Learning & Data Mining, Foundations of Machine Learning, Advanced Machine Learning, Large Language and Vision Models, GPU Programming, Computing Systems, Networks, Relational Databases, Applied Linear Algebra, Statistical Inference, Information Theory
   ]
 ]
 
-#resume-section[honors & accolades][
-  #honor([William Lowell Putnam], [Dec 2023], detail: [Top 1000 · 19 pts])
-  #honor([USACO], [Feb 2021], detail: [Gold Division])
-  #honor([AMC / AIME], [Nov 2021], detail: [3× qualifier])
+#resume-section[olympiads][
+  #honor([Putnam Top 1000], [Dec 2023])
+  #honor([USACO Gold Division], [Feb 2021])
+  #honor([AIME Qualifier], [2019, 2020, 2021])
 ]
 
 #resume-section[fun facts][
