@@ -113,7 +113,7 @@
 
 #resume-section[experience][
   #entry(
-    [Software Engineer · Mechanize],
+    [Member of Technical Staff · Mechanize],
     [Sep 2026 -- Present],
     top: 0em,
     body: [
