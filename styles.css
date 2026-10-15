@@ -31,9 +31,8 @@
 :root {
   --text: #1a1a1a;
   --muted: #555;
-  --border: #ccc;
+  --underline: #b5b5b5;
   --bg: #fff;
-  --link: #1a1a1a;
   --max-width: 42rem;
 }
 
@@ -41,9 +40,8 @@
   :root {
     --text: #e4e4e4;
     --muted: #9a9a9a;
-    --border: #333;
+    --underline: #555;
     --bg: #111;
-    --link: #e4e4e4;
   }
 }
 
@@ -54,72 +52,80 @@
 body {
   font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
   margin: 0;
-  padding: 0 1.25rem 4rem;
+  padding: 0 1.25rem 5rem;
   color: var(--text);
   background-color: var(--bg);
   line-height: 1.65;
   font-size: 0.9rem;
 }
 
+p, h3, dd {
+  text-wrap: pretty;
+}
+
 a {
-  color: var(--link);
+  color: inherit;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration-color: var(--underline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s;
 }
 
 a:hover {
-  text-decoration-thickness: 2px;
+  text-decoration-color: currentColor;
+}
+
+::selection {
+  background: var(--text);
+  color: var(--bg);
 }
 
 h1, h2, h3 {
   margin: 0;
   font-weight: 400;
-  letter-spacing: -0.01em;
 }
 
 h1 {
   font-family: "Lora", Georgia, "Times New Roman", serif;
-  font-size: 1.75rem;
+  font-size: 2.25rem;
   font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 
 h2 {
   font-family: "Lora", Georgia, "Times New Roman", serif;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   text-transform: lowercase;
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.35rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.3rem;
   border-bottom: 1px solid var(--text);
 }
 
 h3 {
-  font-size: 0.95rem;
-  margin-bottom: 0.15rem;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 section {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2.5rem 0 0;
-}
-
-section + section {
-  margin-top: 0.5rem;
+  padding-top: 2.75rem;
 }
 
 /* Intro */
 #intro {
-  padding-top: 3rem;
+  padding-top: 4.5rem;
 }
 
 #intro h1 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .intro-text {
   color: var(--muted);
-  margin: 0 0 1rem;
-  max-width: 36rem;
+  margin: 0 0 0.9rem;
 }
 
 .contact-links {
@@ -128,119 +134,95 @@ section + section {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 0;
 }
 
 .contact-links li:not(:last-child)::after {
-  content: " / ";
+  content: "/";
+  margin: 0 0.6em;
   color: var(--muted);
-  text-decoration: none;
 }
 
-.contact-links a {
-  text-decoration: none;
-}
-
-.contact-links a:hover {
-  text-decoration: underline;
-}
-
-/* Entries (experience, projects, awards, courses) */
-.entry {
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.entry:first-of-type {
-  padding-top: 0;
-}
-
-.entry:last-child {
-  border-bottom: none;
-}
-
-.entry-meta {
-  color: var(--muted);
-  font-size: 0.8rem;
-  margin: 0 0 0.5rem;
-}
-
-.entry ul {
-  margin: 0.5rem 0;
-  padding-left: 1.25rem;
-}
-
-.entry ul li {
-  margin-bottom: 0.35rem;
+/* Entries (experience, projects, education) */
+.entry + .entry {
+  margin-top: 1.75rem;
 }
 
 .entry > p {
-  margin: 0.35rem 0 0;
-  color: var(--text);
+  margin: 0.4rem 0 0;
 }
 
 .entry-header {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  gap: 0.5rem 1rem;
+  gap: 1.5rem;
 }
 
+.entry-meta,
 .entry-links {
-  font-size: 0.8rem;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 .entry-links a {
-  text-decoration: none;
+  color: var(--text);
 }
 
-.entry-links a:hover {
-  text-decoration: underline;
+.sep {
+  margin: 0 0.5em;
 }
 
-.entry-links span {
-  color: var(--muted);
-}
-
-.entry-links .archived {
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
+/* Coursework */
 .course-list {
+  display: grid;
+  grid-template-columns: 9ch 1fr;
+  gap: 0.3rem 1rem;
+  margin: 0;
+}
+
+.course-list dt {
+  color: var(--muted);
+}
+
+.course-list dd {
+  margin: 0;
+}
+
+/* Olympiads */
+.row-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.course-list li {
-  margin-bottom: 0.35rem;
+.row-list li + li {
+  margin-top: 0.4rem;
 }
 
 /* Mobile */
 @media (max-width: 600px) {
   body {
-    padding: 0 1rem 1.5rem;
+    padding: 0 1rem 3rem;
     font-size: 0.85rem;
   }
 
   #intro {
-    padding-top: 2rem;
+    padding-top: 2.5rem;
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.85rem;
   }
 
   section {
-    padding-top: 2rem;
+    padding-top: 2.25rem;
   }
 
-  .entry-header {
+  .entry > .entry-header {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
+    gap: 0;
   }
 }
