@@ -172,7 +172,7 @@
 
   #entry(
     [Catan RL Bot],
-    link("https://github.com/mcrco/catanrl")[github],
+    [#link("https://github.com/mcrco/catanrl")[github] · #link("https://catan.marcoya.ng")[play]],
     body: [
       - RL bot for Settlers of Catan trained with DAgger, PPO, and AlphaZero (WIP).
       - \~70% win rate vs Catanatron baseline bots.
